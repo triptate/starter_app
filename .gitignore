@@ -15,3 +15,18 @@
 /log/*
 !/log/.keep
 /tmp
+
+public/assets
+public/uploads
+.env
+.sass-cache/
+
+# Ignore application configuration
+/config/application.yml
+
+# Ignore ctags file
+/.tags
+
+# Ignore OSX directory config stuff
+.DS_Store
+**/.DS_Store

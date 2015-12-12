@@ -22,5 +22,11 @@ module ItinefairyWeb
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.base_url = ENV['BASE_URL'] || 'http://itinefairy.com'
+
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
   end
 end

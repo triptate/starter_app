@@ -1,47 +1,49 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
+gem 'rails', '~> 4.2'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
+gem 'bcrypt', '~> 3.1'
+gem 'bitly', '~> 0.10'
+gem 'bootstrap', '~> 4.0.0.alpha2'
+gem 'coffee-rails', '~> 4.1'
+gem 'figaro', '~> 1.1'
+gem 'font-awesome-sass', '~> 4.5'
+gem 'friendly_id', '~> 5.2.0.beta.1'
+gem 'geocoder', '~> 1.2'
+gem 'honeybadger', '~> 2.3'
+gem 'jquery-rails', '~> 4.0'
+gem 'jquery-turbolinks', '~> 2.1'
+gem 'jquery-ui-rails', '~> 5.0'
+gem 'newrelic_rpm', '~> 3.14'
+gem 'pg', '~> 0.18'
+gem 'postgres_ext', '~> 2.4'
+gem 'pry-rails', '~> 0.3'
+gem 'puma', '~> 2.15'
+gem 'resque', '~> 1.25'
+gem 'resque_mailer', '~> 2.2'
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'selectize-rails', '~> 0.12'
+gem 'slim', '~> 3.0'
+gem 'turbolinks', '~> 2.5'
+gem 'uglifier', '~> 2.7'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap', '~> 1.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :production do
+  gem 'rails_12factor', '~> 0.0'
+end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'database_cleaner'
+  gem 'pry-remote'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'bullet'
+  gem 'letter_opener'
+  gem 'quiet_assets'
   gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
-

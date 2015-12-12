@@ -38,4 +38,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.delivery_method = :letter_opener
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = false
+    Bullet.bullet_logger = false
+    Bullet.console = true
+    Bullet.growl = false
+    Bullet.rails_logger = false
+    Bullet.airbrake = false
+  end
+
 end
