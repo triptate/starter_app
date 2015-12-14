@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
-  before_action :ensure_logged_out, only: :new
-  before_action :ensure_logged_in, only: :destroy
+  before_action :require_logged_out, only: :new
+  before_action :require_login, only: :destroy
   before_action :user, only: [:new, :create]
 
   def new

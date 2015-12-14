@@ -5,12 +5,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def ensure_logged_out
-    redirect_to logged_in_path and return if current_user.present?
-  end
-
-  def ensure_logged_in
-    redirect_to root_path and return if current_user.blank?
+  def require_logged_out
+    redirect_to logged_in_path and return if logged_in?
   end
 
   def logged_in_path

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :ensure_logged_out, only: :new
-  before_action :ensure_logged_in, only: [:edit, :update, :destroy]
+  before_action :require_logged_out, only: :new
+  before_action :require_login, only: [:edit, :update, :destroy]
   before_action :user, except: [:new, :create]
 
   def show
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if user.save
       flash[:success] = 'Thanks for signing up!'
+      auto_login user
       redirect_to user_path(user)
     else
       flash.now[:danger] = 'Yikes! Looks like something went wrong.'
