@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  before_action :ensure_logged_out, only: :new
   before_action :user, except: [:new, :create]
 
   def show
