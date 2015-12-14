@@ -31,6 +31,10 @@ gem 'uglifier', '~> 2.7'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap', '~> 1.0'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '~> 1.1'
+end
+
 group :production do
   gem 'rails_12factor', '~> 0.0'
 end

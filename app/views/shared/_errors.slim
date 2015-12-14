@@ -1,0 +1,6 @@
+- if item.present? && item.errors.present?
+  .row
+    .col-xs-12
+      .alert.alert-danger role='alert'
+        - item.errors.full_messages.each do |error|
+          .error #{error.gsub /[\^]/, ''}

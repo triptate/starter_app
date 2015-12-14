@@ -16,12 +16,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    @user.password_not_required = true
     if user.save
       flash[:success] = 'Thanks for signing up!'
       auto_login user
       redirect_to user_path(user)
     else
-      flash.now[:danger] = 'Yikes! Looks like something went wrong.'
       render :new
     end
   end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   private
 
   def user
-    @user ||= User.find params[:id]
+    @user ||= User.friendly.find params[:id]
   end
 
   def user_params

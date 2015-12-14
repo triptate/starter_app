@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
   def create
     if login user_params[:email].downcase, user_params[:password]
       flash[:success] = "Nice, you're in..."
-      redirect_to logged_in_path
+      redirect_back_or_to logged_in_path
     else
-      flash[:danger] = 'Oops, you probably mistyped your email or password. Try again...'
+      flash.now[:danger] = 'Oops, you probably mistyped your email or password. Try again...'
       render :new
     end
   end

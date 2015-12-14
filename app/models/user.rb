@@ -3,7 +3,16 @@ class User < ActiveRecord::Base
   extend TokenGenerator
 
   authenticates_with_sorcery!
-  friendly_id :slug_options, use: [:slugged, :finders]
+  friendly_id :slug_options, use: :slugged
+
+  validates :email, presence: true, uniqueness: true, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates :password, presence: true, unless: :password_not_required
+
+  attr_accessor :password_not_required
+
+  def formatted_email
+    %Q{"<#{email}>"}
+  end
 
 
   private

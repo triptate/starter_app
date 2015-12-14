@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -18,7 +18,7 @@ Rails.application.config.sorcery.configure do |config|
   # the URL he wanted to reach, and send him there after login, using 'redirect_back_or_to'.
   # Default: `true`
   #
-  # config.save_return_to_url =
+  config.save_return_to_url = true
 
 
   # Set domain option for cookies; Useful for remember_me submodule.
@@ -189,7 +189,7 @@ Rails.application.config.sorcery.configure do |config|
     # downcase the username before trying to authenticate, default is false
     # Default: `false`
     #
-    # user.downcase_username_before_authenticating =
+    user.downcase_username_before_authenticating = true
 
 
     # change default email attribute.
@@ -333,13 +333,13 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    # user.reset_password_mailer =
+    user.reset_password_mailer = UserMailer
 
 
     # reset password email method on your mailer class.
     # Default: `:reset_password_email`
     #
-    # user.reset_password_email_method_name =
+    user.reset_password_email_method_name = :reset_password
 
 
     # when true sorcery will not automatically

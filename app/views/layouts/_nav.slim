@@ -1,0 +1,13 @@
+| Stuff to do so far:
+br
+- if logged_in?
+  = link_to 'log out', session_path, method: :delete
+- else
+  = link_to 'sign up', new_user_path
+  br
+  = link_to 'log in', new_session_path
+  br
+  = link_to 'reset password', new_password_reset_path
+
+br
+br
