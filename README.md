@@ -58,7 +58,6 @@
 #### Get env vars for application.yml from a buddy
 
 #### Get the DB going
-    $ rake db:create
     $ rake db:setup
 
 #### Moment of truth...
