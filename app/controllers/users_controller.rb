@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    @user.password_not_required = true
+    user.email.downcase!
     if user.save
       flash[:success] = 'Thanks for signing up!'
       auto_login user

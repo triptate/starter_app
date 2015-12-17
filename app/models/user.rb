@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   friendly_id :slug_candidates, use: :slugged
 
-  validates :email, presence: true, uniqueness: true, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :password, presence: true, unless: :password_not_required
 
   attr_accessor :password_not_required
