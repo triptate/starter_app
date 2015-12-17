@@ -4,4 +4,4 @@
   .form-group.form-group-lg
     = label_tag :email, 'Enter your email address', class: 'control-label'
     = text_field_tag :email, nil, placeholder: 'Email', class: 'form-control'
-  = submit_tag 'Reset your password', class: 'btn btn-primary'
+  = submit_tag 'Reset your password', class: 'btn btn-primary', data: { disable_with: 'Resetting your password...' }
