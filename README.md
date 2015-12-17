@@ -1,4 +1,4 @@
-# Itinefairy
+# Starter App
 
 ## Local System Setup
 
@@ -43,8 +43,8 @@
 ## Get The Application Running
 
 #### Clone the app
-    $ git clone https://github.com/itinefairy/itinefairy_web
-    $ cd /itinefairy_web
+    $ git clone https://github.com/pegulabs/starter_app
+    $ cd /starter_app
 
 #### Set local version of ruby for the app
     $ rbenv local 2.2.3
@@ -64,26 +64,3 @@
 #### Moment of truth...
     $ rails s
     $ foreman s                                                               # if you prefer...
-
-## Get some real data locally
-
-## Deployment
-
-#### Create a Heroku account and add your public SSH key to your Heroku account, then
-    $ brew install heroku                                                     # if you don't have it
-    $ heroku login
-    $ heroku git:remote -a itinefairy -r production
-
-#### To deploy
-    $ git push <heroku_remote_name> <local_branch>:master
-
-#### Examples
-    $ git push experimental my_branch:master
-    $ git push staging dev:master
-    $ git push production master
-
-#### Don't forget to run migrations if any are pending
-    $ heroku run rake db:migrate --app itinefairy
-
-#### If anything's wonky after deploy, it might need a restart
-    $ heroku restart --app itinefairy

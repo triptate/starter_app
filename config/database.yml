@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: itinefairy_dev
+  database: starter_app_dev
   pool: 50
   timeout: 5000
   host: localhost
@@ -8,7 +8,7 @@ development:
 
 test:
   adapter: postgresql
-  database: itinefairy_test
+  database: starter_app_test
   pool: 50
   timeout: 5000
   host: localhost

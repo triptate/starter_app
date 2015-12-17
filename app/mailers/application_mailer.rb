@@ -5,8 +5,8 @@ class ApplicationMailer < ActionMailer::Base
 
   layout 'email'
 
-  default from: 'Itinefairy Team <hi@itinefairy.com>'
-  default reply_to: 'Itinefairy Help <help@alumnifire.com>'
+  default from: 'The Pegu Labs Team <hi@pegulabs.com>'
+  default reply_to: 'Pegu Labs Help <help@pegulabs.com>'
 
   helper_method :current_user
 
