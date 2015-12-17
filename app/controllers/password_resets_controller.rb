@@ -33,7 +33,6 @@ class PasswordResetsController < ApplicationController
       auto_login user
       redirect_to logged_in_path
     else
-      flash[:danger] = 'Well, something went wrong with that...want to try again?'
       render :edit
     end
   end

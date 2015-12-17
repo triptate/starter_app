@@ -1,0 +1,7 @@
+| Ok, you may now reset your password...
+= form_for @user, url: password_reset_path, :method => :patch do |f|
+  = render 'shared/errors', item: @user
+  .form-group.form-group-lg
+    = f.label :password, 'Enter a new password', class: 'control-label'
+    = f.password_field :password, placeholder: 'Password', class: 'form-control'
+  = f.submit 'Save password', class: 'btn btn-primary', data: { disable_with: 'Saving your new password...' }

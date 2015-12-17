@@ -31,7 +31,6 @@ class UsersController < ApplicationController
       flash[:success] = 'Nice work! All set.'
       redirect_to user_path(user)
     else
-      flash.now[:danger] = "Yikes! We couldn't update your info. Try again?"
       render :edit
     end
   end
