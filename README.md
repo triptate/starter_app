@@ -43,7 +43,7 @@
 ## Get The Application Running
 
 #### Clone the app
-    $ git clone https://github.com/pegulabs/starter_app
+    $ git clone https://github.com/triptate/starter_app
     $ cd /starter_app
 
 #### Set local version of ruby for the app
